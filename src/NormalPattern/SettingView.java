@@ -158,13 +158,13 @@ public class SettingView extends AbstractSettingView{
 		CLabel redTitle = new CLabel("<html>請選擇<font color='red'>紅子</font>類型<html>",SwingConstants.CENTER);
 		redTitle.setAttr(0, 0, 362, 30, CLabel.SettingTitleBold);
 		
-		CRadioButton buttonRedTypeHuman = new CRadioButton(CRadioButton.SettingRadioButton,new AbstractAction("玩家") {
+		final CRadioButton buttonRedTypeHuman = new CRadioButton(CRadioButton.SettingRadioButton,new AbstractAction("玩家") {
 		    public void actionPerformed(ActionEvent e) {
 		    	ctr.changeTypeToHuman(ChessSide.RED);
 		    	redAIName.setText("<html><font color='"+PlayingPlayerView.colorTitle+"'></font></html>");
 		    }
 		});
-		CRadioButton buttonRedTypeInternalAI = new CRadioButton(CRadioButton.SettingRadioButton,new AbstractAction("內建AI") {
+		final CRadioButton buttonRedTypeInternalAI = new CRadioButton(CRadioButton.SettingRadioButton,new AbstractAction("內建AI") {
 		    public void actionPerformed(ActionEvent e) {
 		    	ctr.changeTypeToInternalAI(ChessSide.RED);
 		    	redAIName.setText("<html><font color='"+PlayingPlayerView.colorTitle+"'>Build-In AI</font></html>");
@@ -198,13 +198,13 @@ public class SettingView extends AbstractSettingView{
 		CLabel blackTitle = new CLabel("<html>請選擇<font color='red'>黑子</font>類型<html>",SwingConstants.CENTER);
 		blackTitle.setAttr(0, 0, 362, 30, CLabel.SettingTitleBold);
 		
-		CRadioButton buttonBlackTypeHuman = new CRadioButton(CRadioButton.SettingRadioButton,new AbstractAction("玩家") {
+		final CRadioButton buttonBlackTypeHuman = new CRadioButton(CRadioButton.SettingRadioButton,new AbstractAction("玩家") {
 		    public void actionPerformed(ActionEvent e) {
 		    	ctr.changeTypeToHuman(ChessSide.BLACK);
 		    	blackAIName.setText("<html><font color='"+PlayingPlayerView.colorTitle+"'></font></html>");
 		    }
 		});
-		CRadioButton buttonBlackTypeInternalAI = new CRadioButton(CRadioButton.SettingRadioButton,new AbstractAction("內建AI") {
+		final CRadioButton buttonBlackTypeInternalAI = new CRadioButton(CRadioButton.SettingRadioButton,new AbstractAction("內建AI") {
 		    public void actionPerformed(ActionEvent e) {
 		    	ctr.changeTypeToInternalAI(ChessSide.BLACK);
 		    	blackAIName.setText("<html><font color='"+PlayingPlayerView.colorTitle+"'>Build-In AI</font></html>");
@@ -343,7 +343,6 @@ class SettingEnterNicknameDialog extends JDialog implements ActionListener{
 	
 	/**
 	 * 選擇AI視窗Frame與Panel參數設定
-	 * @return
 	 */
 	private void setFrameView(){
 		/* 主選單Frame設定 */
@@ -362,7 +361,6 @@ class SettingEnterNicknameDialog extends JDialog implements ActionListener{
 	
 	/**
 	 * 設定Panel
-	 * @return
 	 */
 	private void setPanelView(){
 		JPanel jp = new JPanel(null);
@@ -476,7 +474,6 @@ class SettingSelectAIDialog extends JDialog implements ActionListener{
 	
 	/**
 	 * 選擇AI視窗Frame與Panel參數設定
-	 * @return
 	 */
 	private void setFrameView(){
 		/* 主選單Frame設定 */

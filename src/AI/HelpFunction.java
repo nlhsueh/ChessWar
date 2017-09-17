@@ -386,7 +386,7 @@ public class HelpFunction {
 	 * 確認此位置是否存在對方的將或帥
 	 * @param chess Chess[] 目前盤面
 	 * @param p Point 欲吃棋之位置
-	 * @param ChessSide 我方的顏色
+	 * @param side 我方的顏色
 	 * @return 回傳是否可吃對方將帥
 	 */
 	public static boolean isExistKing(Chess[] chess, Point p, ChessSide side) {

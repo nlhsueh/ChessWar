@@ -45,7 +45,6 @@ public class AddingDeleteAIDialog extends JDialog implements ActionListener{
 	
 	/**
 	 * 選擇AI視窗Frame與Panel參數設定
-	 * @return
 	 */
 	private void setFrameView(){
 		/* 主選單Frame設定 */

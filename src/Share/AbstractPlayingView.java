@@ -38,13 +38,11 @@ public abstract class AbstractPlayingView {
 	
 	/**
 	 * 建立Title
-	 * @return
 	 */
 	protected abstract void setTitle();
 	
 	/**
 	 * 建立棋盤View
-	 * @return
 	 */
 	protected void setChessBoard() {
 		// Background Image's Panel
@@ -54,7 +52,6 @@ public abstract class AbstractPlayingView {
 	
 	/**
 	 * 建立下方Button Set
-	 * @return
 	 */
 	protected void setButtonSet() {
 

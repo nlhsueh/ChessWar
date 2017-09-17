@@ -78,7 +78,6 @@ public class MainFrame extends JFrame {
 	}
 	/**
 	 * 主選單按鈕設定
-	 * @return
 	 */
 	private void setButtons(){
 		

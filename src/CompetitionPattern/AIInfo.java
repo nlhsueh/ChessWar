@@ -1,3 +1,6 @@
+/*
+ * 包含開發競爭模式時所有相關的類別設計
+ */
 package CompetitionPattern;
 
 import AI.AbstractPlayer;

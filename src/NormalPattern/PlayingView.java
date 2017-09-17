@@ -34,7 +34,6 @@ public class PlayingView extends AbstractPlayingView{
 	
 	/**
 	 * 建立Title
-	 * @return
 	 */
 	protected void setTitle(){
 		JLabel title = new JLabel();

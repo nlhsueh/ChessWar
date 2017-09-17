@@ -9,6 +9,10 @@ import ChessGame.ChessSide;
 import ObserverData.MyMove;
 import ObserverData.OpponentMove;
 
+/*
+ * 這是一個展示用的內建 AI, 基本上沒有任何智慧，只是隨機
+ * 的找一個可以下的棋子來下
+ */
 public class BuildInAI extends AbstractPlayer{
 	
 	public BuildInAI(Chess[] chess, ChessSide chessColor) {
