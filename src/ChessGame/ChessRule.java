@@ -1,5 +1,12 @@
 package ChessGame;
 
+/*
+ * By Nien-Lin Hsueh, Software Engineering Lab, Feng Chia University
+ * Copyright: 
+ * 	> You can revise the code
+ * 	> You can't distribute the code 
+ */
+
 import java.awt.Point;
 
 import ObserverData.MyMove;
