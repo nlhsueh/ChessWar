@@ -6,7 +6,7 @@ import ChessGame.Chess;
 import ChessGame.ChessSide;
 import ObserverData.MyMove;
 
-public class HelpFunction {
+public class ChessUtility {
 	
 	/**
 	 * 檢查遊戲是否已經結束
@@ -27,7 +27,7 @@ public class HelpFunction {
 	 * @param p 欲移動到的位置
 	 * @return 是否可以移動或吃棋
 	 */
-	public static boolean isCouldMove(Chess[]chess, Chess c, Point p) {
+	public static boolean couldMove(Chess[]chess, Chess c, Point p) {
 
 		if (c.getChessLoc().equals(p))
 			return false;
@@ -38,12 +38,12 @@ public class HelpFunction {
 		
 		case 1:
 			if ((p.x >= 3 && p.y >= 7) && (p.x <= 5 && p.y <= 9)) {
-				if (calDistance(locP, p) == 1) {
+				if (distance(locP, p) == 1) {
 					return true;
 				}
 			// 王衝王
 			}else if(p.x == locX && getChess(chess, p).getChessIndex() == 17){
-				if (calObstacle(chess, c, p) == 0) {
+				if (countObstacle(chess, c, p) == 0) {
 					return true;
 				}
 			}
@@ -51,7 +51,7 @@ public class HelpFunction {
 		case 2:
 		case 3:
 			if ((p.x >= 3 && p.y >= 7) && (p.x <= 5 && p.y <= 9)) {
-				if (calDistance(locP, p) == calDistance(new Point(0, 0), new Point(1, 1))) {
+				if (distance(locP, p) == distance(new Point(0, 0), new Point(1, 1))) {
 					return true;
 				}
 			}
@@ -59,8 +59,8 @@ public class HelpFunction {
 		case 4:
 		case 5:
 			if ((p.x >= 0 && p.y >= 5) && (p.x <= 8 && p.y <= 9)) {
-				if (calDistance(locP, p) == calDistance(new Point(0, 0), new Point(2, 2))) {
-					if(calObstacleForElephant(chess, c, p) == 0){
+				if (distance(locP, p) == distance(new Point(0, 0), new Point(2, 2))) {
+					if(countObstacleForElephant(chess, c, p) == 0){
 						return true;
 					}
 				}
@@ -69,15 +69,15 @@ public class HelpFunction {
 		case 6:
 		case 7:
 			if ((locX == p.x) || (locY == p.y)) {
-				if (calObstacle(chess, c, p) == 0) {
+				if (countObstacle(chess, c, p) == 0) {
 					return true;
 				}
 			}
 			break;
 		case 8:
 		case 9:
-			if (calDistance(locP, p) == calDistance(new Point(0, 0), new Point(1, 2))) {
-				if(calObstacleForHorse(chess, c, p) == 0){
+			if (distance(locP, p) == distance(new Point(0, 0), new Point(1, 2))) {
+				if(countObstacleForHorse(chess, c, p) == 0){
 					return true;
 				}
 			}
@@ -85,11 +85,11 @@ public class HelpFunction {
 		case 10:
 		case 11:
 			if ((locX == p.x) || (locY == p.y)) {
-				if (calObstacle(chess, c, p) == 1) {
+				if (countObstacle(chess, c, p) == 1) {
 					if (hasChess(chess, p)) {
 						return true;
 					}
-				} else if (calObstacle(chess, c, p) == 0) {
+				} else if (countObstacle(chess, c, p) == 0) {
 					if (!hasChess(chess, p)) {
 						return true;
 					}
@@ -102,11 +102,11 @@ public class HelpFunction {
 		case 15:
 		case 16:
 			if ((locY <= 4) && (p.y <= locY)) {
-				if (calDistance(locP, p) == 1) {
+				if (distance(locP, p) == 1) {
 					return true;
 				}
 			} else {
-				if ((locX == p.x) && (p.y < locY) && (calDistance(locP, p) == 1)) {
+				if ((locX == p.x) && (p.y < locY) && (distance(locP, p) == 1)) {
 					return true;
 				}
 			}
@@ -114,12 +114,12 @@ public class HelpFunction {
 		case 17:
 			// 九格內
 			if ((p.x >= 3 && p.y >= 0) && (p.x <= 5 && p.y <= 2)) {
-				if (calDistance(locP, p) == 1) {
+				if (distance(locP, p) == 1) {
 					return true;
 				}
 			// 王衝王
 			}else if(p.x == locX && getChess(chess, p).getChessIndex() == 1){
-				if (calObstacle(chess, c, p) == 0) {
+				if (countObstacle(chess, c, p) == 0) {
 					return true;
 				}
 			}
@@ -127,7 +127,7 @@ public class HelpFunction {
 		case 18:
 		case 19:
 			if ((p.x >= 3 && p.y >= 0) && (p.x <= 5 && p.y <= 2)) {
-				if (calDistance(locP, p) == calDistance(new Point(0, 0), new Point(1, 1))) {
+				if (distance(locP, p) == distance(new Point(0, 0), new Point(1, 1))) {
 					return true;
 				}
 			}
@@ -135,8 +135,8 @@ public class HelpFunction {
 		case 20:
 		case 21:
 			if ((p.x >= 0 && p.y >= 0) && (p.x <= 8 && p.y <= 4)) {
-				if (calDistance(locP, p) == calDistance(new Point(0, 0), new Point(2, 2))) {
-					if(calObstacleForElephant(chess, c, p) == 0){
+				if (distance(locP, p) == distance(new Point(0, 0), new Point(2, 2))) {
+					if(countObstacleForElephant(chess, c, p) == 0){
 						return true;
 					}
 				}
@@ -145,15 +145,15 @@ public class HelpFunction {
 		case 22:
 		case 23:
 			if ((locX == p.x) || (locY == p.y)) {
-				if (calObstacle(chess, c, p) == 0) {
+				if (countObstacle(chess, c, p) == 0) {
 					return true;
 				}
 			}
 			break;
 		case 24:
 		case 25:
-			if (calDistance(locP, p) == calDistance(new Point(0, 0), new Point(1, 2))) {
-				if(calObstacleForHorse(chess, c, p) == 0){
+			if (distance(locP, p) == distance(new Point(0, 0), new Point(1, 2))) {
+				if(countObstacleForHorse(chess, c, p) == 0){
 					return true;
 				}
 			}
@@ -161,11 +161,11 @@ public class HelpFunction {
 		case 26:
 		case 27:
 			if ((locX == p.x) || (locY == p.y)) {
-				if (calObstacle(chess, c, p) == 1) {
+				if (countObstacle(chess, c, p) == 1) {
 					if (hasChess(chess, p)) {
 						return true;
 					}
-				} else if (calObstacle(chess, c, p) == 0) {
+				} else if (countObstacle(chess, c, p) == 0) {
 					if (!hasChess(chess, p)) {
 						return true;
 					}
@@ -178,11 +178,11 @@ public class HelpFunction {
 		case 31:
 		case 32:
 			if ((locY >= 5) && (p.y >= locY)) {
-				if (calDistance(locP, p) == 1) {
+				if (distance(locP, p) == 1) {
 					return true;
 				}
 			} else {
-				if ((locX == p.x) && (p.y > locY) && (calDistance(locP, p) == 1)) {
+				if ((locX == p.x) && (p.y > locY) && (distance(locP, p) == 1)) {
 					return true;
 				}
 			}
@@ -198,7 +198,7 @@ public class HelpFunction {
 	 * @param p 欲移動至的位置
 	 * @return 中間的棋子數量
 	 */
-	public static int calObstacle(Chess[]chess, Chess c, Point p) {
+	public static int countObstacle(Chess[]chess, Chess c, Point p) {
 		int total = 0;
 		int x1 = c.getChessLoc().x;
 		int y1 = c.getChessLoc().y;
@@ -250,7 +250,7 @@ public class HelpFunction {
 	 * @return 障礙物數量
 	 */
 	
-	public static int calObstacleForElephant(Chess[]chess, Chess c, Point p){
+	public static int countObstacleForElephant(Chess[]chess, Chess c, Point p){
 		int total = 0;
 		int x1 = c.getChessLoc().x;
 		int y1 = c.getChessLoc().y;
@@ -289,7 +289,7 @@ public class HelpFunction {
 	 * @return 障礙物數量
 	 */
 	
-	public static int calObstacleForHorse(Chess[]chess, Chess c, Point p){
+	public static int countObstacleForHorse(Chess[]chess, Chess c, Point p){
 		int total = 0;
 		int x1 = c.getChessLoc().x;
 		int y1 = c.getChessLoc().y;
@@ -376,7 +376,7 @@ public class HelpFunction {
 	 * @param p2 Point 點2
 	 * @return 回傳兩點距離
 	 */
-	public static double calDistance(Point p1, Point p2) {
+	public static double distance(Point p1, Point p2) {
 
 		return Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
 
@@ -389,10 +389,10 @@ public class HelpFunction {
 	 * @param side 我方的顏色
 	 * @return 回傳是否可吃對方將帥
 	 */
-	public static boolean isExistKing(Chess[] chess, Point p, ChessSide side) {
+	public static boolean kingExist(Chess[] chess, Point p, ChessSide side) {
 		
-		if(HelpFunction.hasChess(chess, p)){
-			Chess eatedChess = HelpFunction.getChess(chess, p);
+		if(ChessUtility.hasChess(chess, p)){
+			Chess eatedChess = ChessUtility.getChess(chess, p);
 			if(side == ChessSide.BLACK){
 				if(eatedChess.getChessName().equals("帥")){
 					return true;

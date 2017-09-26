@@ -17,7 +17,7 @@ import javax.swing.border.LineBorder;
 
 import AI.AbstractPlayer;
 import AI.BuildInAI;
-import AI.communicateObserver;
+import AI.CommunicateObserver;
 import DevelopPattern.DevelopGameSetting;
 import FrameView.MainFrame;
 import NormalPattern.NormalGameSetting;
@@ -57,8 +57,8 @@ public class GameModel extends Observable implements Observer{
 	/* 預留AI參數 */
 	private AbstractPlayer player1AI ;
 	private AbstractPlayer player2AI ;
-	private communicateObserver obs1 ;
-	private communicateObserver obs2 ;
+	private CommunicateObserver obs1 ;
+	private CommunicateObserver obs2 ;
 	
 	public GameModel(GameSetting gameSetting, Chess[] chess, ChessMap chessMap, JLayeredPane chessPanel){
 		
@@ -139,7 +139,7 @@ public class GameModel extends Observable implements Observer{
 	public void checkAI_Normal(){
 		if(this.player1Type == 2){
 			this.player1AI = new BuildInAI(this.copyAllChess(),player1Color);
-			this.obs1 = new communicateObserver(this.player1AI, player1Color);
+			this.obs1 = new CommunicateObserver(this.player1AI, player1Color);
 			this.addObserver(obs1);
 			obs1.addObserver(this);
 		}else if(this.player1Type == 3){
@@ -161,7 +161,7 @@ public class GameModel extends Observable implements Observer{
 				AbstractPlayer a = (AbstractPlayer) constructor.newInstance(this.copyAllChess(),player1Color);
 				/* 設定類別參數與藉由委託實作Observer */
 				this.player1AI = a ;
-				this.obs1 = new communicateObserver(this.player1AI, player1Color);
+				this.obs1 = new CommunicateObserver(this.player1AI, player1Color);
 				this.addObserver(obs1);
 				obs1.addObserver(this);
 			} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException | SecurityException | IllegalArgumentException | InvocationTargetException e) {
@@ -174,7 +174,7 @@ public class GameModel extends Observable implements Observer{
 		}
 		if(this.player2Type == 2){
 			this.player2AI = new BuildInAI(this.copyAllChess(),player2Color);
-			this.obs2 = new communicateObserver(this.player2AI, player2Color);
+			this.obs2 = new CommunicateObserver(this.player2AI, player2Color);
 			this.addObserver(obs2);
 			obs2.addObserver(this);
 		}else if(this.player2Type == 3){
@@ -197,7 +197,7 @@ public class GameModel extends Observable implements Observer{
 				AbstractPlayer a = (AbstractPlayer) constructor.newInstance(this.copyAllChess(),player2Color);
 				/* 設定類別參數與藉由委託實作Observer */
 				this.player2AI = a ;
-				this.obs2 = new communicateObserver(this.player2AI, player2Color);
+				this.obs2 = new CommunicateObserver(this.player2AI, player2Color);
 				this.addObserver(obs2);
 				obs2.addObserver(this);
 			} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException | SecurityException | IllegalArgumentException | InvocationTargetException e) {
@@ -217,7 +217,7 @@ public class GameModel extends Observable implements Observer{
 	public void checkAI_Develop(){
 		if(this.player1Type == 2){
 			this.player1AI = new BuildInAI(this.copyAllChess(),player1Color);
-			this.obs1 = new communicateObserver(this.player1AI, player1Color);
+			this.obs1 = new CommunicateObserver(this.player1AI, player1Color);
 			this.addObserver(obs1);
 			obs1.addObserver(this);
 		}else if(this.player1Type == 3){
@@ -241,7 +241,7 @@ public class GameModel extends Observable implements Observer{
 				AbstractPlayer a = (AbstractPlayer) constructor.newInstance(this.copyAllChess(),player1Color);
 				/* 設定類別參數與藉由委託實作Observer */
 				this.player1AI = a ;
-				this.obs1 = new communicateObserver(this.player1AI, player1Color);
+				this.obs1 = new CommunicateObserver(this.player1AI, player1Color);
 				this.addObserver(obs1);
 				obs1.addObserver(this);
 			} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException | SecurityException | IllegalArgumentException | InvocationTargetException e) {
@@ -255,7 +255,7 @@ public class GameModel extends Observable implements Observer{
 		}
 		if(this.player2Type == 2){
 			this.player2AI = new BuildInAI(this.copyAllChess(),player2Color);
-			this.obs2 = new communicateObserver(this.player2AI, player2Color);
+			this.obs2 = new CommunicateObserver(this.player2AI, player2Color);
 			this.addObserver(obs2);
 			obs2.addObserver(this);
 		}else if(this.player2Type == 3){
@@ -279,7 +279,7 @@ public class GameModel extends Observable implements Observer{
 				AbstractPlayer a = (AbstractPlayer) constructor.newInstance(this.copyAllChess(),player2Color);
 				/* 設定類別參數與藉由委託實作Observer */
 				this.player2AI = a ;
-				this.obs2 = new communicateObserver(this.player2AI, player2Color);
+				this.obs2 = new CommunicateObserver(this.player2AI, player2Color);
 				this.addObserver(obs2);
 				obs2.addObserver(this);
 			} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException | SecurityException | IllegalArgumentException | InvocationTargetException e) {

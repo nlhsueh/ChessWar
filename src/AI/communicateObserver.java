@@ -7,12 +7,12 @@ import ChessGame.ChessSide;
 import ObserverData.MyMove;
 import ObserverData.OpponentMove;
 
-public class communicateObserver extends Observable implements Observer{
+public class CommunicateObserver extends Observable implements Observer{
 	
 	private AbstractPlayer player ;
 	private ChessSide myChessSide ; /* 這場遊戲的我方的顏色 */
 	
-	public communicateObserver(AbstractPlayer player, ChessSide myChessSide){
+	public CommunicateObserver(AbstractPlayer player, ChessSide myChessSide){
 		this.player = player;
 		this.myChessSide = myChessSide;
 	}

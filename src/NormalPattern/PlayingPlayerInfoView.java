@@ -8,19 +8,19 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-import ChessGame.PlayerInfo;
+import ChessGame.Player;
 import FrameView.MainFrame;
 import Share.InterfacePlayeringPlayerInfoView;
 
 public class PlayingPlayerInfoView implements InterfacePlayeringPlayerInfoView{
 
 	private JPanel panel ;
-	private PlayerInfo playerInfo ;
+	private Player playerInfo ;
 	private JLabel playerChessColorLabel = new JLabel();
 	private JLabel playerNicknameLabel = new JLabel();
 	private JLabel playerTypeLabel = new JLabel();
 	
-	public PlayingPlayerInfoView(JPanel panel, PlayerInfo playerInfo){
+	public PlayingPlayerInfoView(JPanel panel, Player playerInfo){
 		this.panel = panel ;
 		this.playerInfo = playerInfo ;
 		this.iniView();

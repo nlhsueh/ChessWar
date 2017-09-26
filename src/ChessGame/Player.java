@@ -1,6 +1,6 @@
 package ChessGame;
 
-public class PlayerInfo {
+public class Player {
 	private String playerNickname;
 	private String externalName;
 	private int playerType ; // 1 - human ,   2 - Internal AI , 3- External AI

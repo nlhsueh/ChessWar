@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import AI.AbstractPlayer;
-import AI.communicateObserver;
+import AI.CommunicateObserver;
 import ChessGame.Chess;
 import ChessGame.ChessBoard;
 import ChessGame.ChessMap;
@@ -42,8 +42,8 @@ public class GameModel extends Observable implements Observer{
 	/* AI參數 */
 	private AbstractPlayer player1AI ;
 	private AbstractPlayer player2AI ;
-	private communicateObserver obs1 ;
-	private communicateObserver obs2 ;
+	private CommunicateObserver obs1 ;
+	private CommunicateObserver obs2 ;
 	
 	public GameModel(GameInfo gameInfo, int timeout){
 		this.gameInfo = gameInfo;
@@ -93,7 +93,7 @@ public class GameModel extends Observable implements Observer{
 		try {
 			constructor = c.getConstructor(params);
 			this.player1AI = (AbstractPlayer) constructor.newInstance(this.copyAllChess(), player1Color);
-			this.obs1 = new communicateObserver(this.player1AI, player1Color);
+			this.obs1 = new CommunicateObserver(this.player1AI, player1Color);
 			this.addObserver(obs1);
 			obs1.addObserver(this);
 		} catch (NoSuchMethodException | SecurityException e) {
@@ -118,7 +118,7 @@ public class GameModel extends Observable implements Observer{
 		try {
 			constructor2 = c2.getConstructor(params);
 			this.player2AI = (AbstractPlayer) constructor2.newInstance(this.copyAllChess(), player2Color);
-			this.obs2 = new communicateObserver(this.player2AI, player2Color);
+			this.obs2 = new CommunicateObserver(this.player2AI, player2Color);
 			this.addObserver(obs2);
 			obs2.addObserver(this);
 		} catch (NoSuchMethodException | SecurityException e) {

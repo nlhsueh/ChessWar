@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-import ChessGame.PlayerInfo;
+import ChessGame.Player;
 import FrameView.MainFrame;
 import NormalPattern.PlayingPlayerView;
 import ObserverData.ChangeTurnData;
@@ -22,7 +22,7 @@ import ObserverData.LeaveGameData;
 public class PlayingTimeoutView implements Observer{
 	
 	private JPanel panel ;
-	private PlayerInfo playerInfo ;
+	private Player playerInfo ;
 	
 	private JLabel roundTimeLabel;
 	private JLabel totalTimeLabel;
@@ -34,7 +34,7 @@ public class PlayingTimeoutView implements Observer{
 	private int defaultTimeout ;
 	static final private DecimalFormat df = new DecimalFormat("##00") ;
 	
-	public PlayingTimeoutView(JPanel panel, PlayerInfo playerInfo,int timeout){
+	public PlayingTimeoutView(JPanel panel, Player playerInfo,int timeout){
 		this.panel = panel ;
 		this.playerInfo = playerInfo ;
 		this.defaultTimeout = timeout ;

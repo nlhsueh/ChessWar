@@ -7,8 +7,8 @@ import ChessGame.ChessSide;
 
 /**
  * 用來接收對手AI移動的資料結構類別<br>
- * 撰寫者在實作nextMove時，每回合都會接一個傳入的此物件<br>
- * 並且可以使用get取得相關資訊（請見下方method）
+ * 撰寫者在實作 nextMove時，每回合都會接一個傳入的此物件<br>
+ * 並且可以使用 get取得相關資訊（請見下方method）
  */
 public class OpponentMove {
 	

@@ -30,11 +30,15 @@ public class MainFrame extends JFrame {
 	public static JPanel framePanel = new JPanel();
 	private CardLayout cardLayout = new CardLayout();
 	private JLayeredPane layeredPane = new JLayeredPane();
-	
-	public static ImageIcon icon_alert = new ImageIcon(new ImageIcon(MainFrame.class.getClass().getResource("/img/icon/alert_a.png")).getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
-	public static ImageIcon icon_error = new ImageIcon(new ImageIcon(MainFrame.class.getClass().getResource("/img/icon/error_a.png")).getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH));
-	
-	public MainFrame(){
+
+	public static ImageIcon icon_alert = new ImageIcon(
+			new ImageIcon(MainFrame.class.getClass().getResource("/img/icon/alert_a.png")).getImage()
+					.getScaledInstance(60, 60, Image.SCALE_SMOOTH));
+	public static ImageIcon icon_error = new ImageIcon(
+			new ImageIcon(MainFrame.class.getClass().getResource("/img/icon/error_a.png")).getImage()
+					.getScaledInstance(60, 60, Image.SCALE_SMOOTH));
+
+	public MainFrame() {
 		/* Frame & Panel View Attributes Setting */
 		this.setViewAttr();
 		/* setBackground Image */
@@ -43,28 +47,28 @@ public class MainFrame extends JFrame {
 		this.setButtons();
 		/* create other pages */
 		this.createOtherPage();
-		
+
 		this.setVisible(true);
 	}
-	
+
 	/**
 	 * 建立其它頁面
 	 */
-	private void createOtherPage(){
+	private void createOtherPage() {
 		GameSetting playGameSetting = SaveSetting.loadPlayGameSetting();
 		GameSetting developGameSetting = SaveSetting.loadDevelopGameSetting();
 		ExternalAIData externalAIData = SaveSetting.loadExternalAI();
-		
-		MainFrame.framePanel.add(new NormalPattern.SettingView(playGameSetting,externalAIData), "PlaySetting");
+
+		MainFrame.framePanel.add(new NormalPattern.SettingView(playGameSetting, externalAIData), "PlaySetting");
 		MainFrame.framePanel.add(new DevelopPattern.SettingView(developGameSetting), "DevelopSetting");
 		MainFrame.framePanel.add(new AddingAIView(externalAIData), "LoadingAI");
-		new ChangePage(MainFrame.framePanel,this.cardLayout);
+		new ChangePage(MainFrame.framePanel, this.cardLayout);
 	}
-	
+
 	/**
 	 * 主視窗Frame與Panel參數設定
 	 */
-	private void setViewAttr(){
+	private void setViewAttr() {
 		/* 主選單Frame設定 */
 		this.setSize(924, 760);
 		this.setResizable(false);
@@ -74,46 +78,46 @@ public class MainFrame extends JFrame {
 		this.add(MainFrame.framePanel);
 		/* 主選單Panel設定 */
 		MainFrame.framePanel.setLayout(this.cardLayout);
-		MainFrame.framePanel.add(layeredPane,"MainFrame");
+		MainFrame.framePanel.add(layeredPane, "MainFrame");
 	}
+
 	/**
 	 * 主選單按鈕設定
 	 */
-	private void setButtons(){
-		
+	private void setButtons() {
+
 		/* Button Set's Panel */
-		CPanel cp = new CPanel(0,375,924,40,new GridLayout(1, 5, 0, 0));
-		
+		CPanel cp = new CPanel(0, 375, 924, 40, new GridLayout(1, 5, 0, 0));
+
 		/* Add Button to Panel */
-		cp.add(new CButton(CButton.MainFrame,new AbstractAction("對弈模式") {
-		    public void actionPerformed(ActionEvent e) {
-		    	ChangePage.changeToPlaySettingPage();
-		    }
+		cp.add(new CButton(CButton.MainFrame, new AbstractAction("對弈模式") {
+			public void actionPerformed(ActionEvent e) {
+				ChangePage.changeToPlaySettingPage();
+			}
 		}));
-		cp.add(new CButton(CButton.MainFrame,new AbstractAction("開發模式") {
-		    public void actionPerformed(ActionEvent e) {
-		    	ChangePage.changeToDevelopSettingPage();
-		    }
+		cp.add(new CButton(CButton.MainFrame, new AbstractAction("開發模式") {
+			public void actionPerformed(ActionEvent e) {
+				ChangePage.changeToDevelopSettingPage();
+			}
 		}));
-		cp.add(new CButton(CButton.MainFrame,new AbstractAction("比賽模式") {
-		    public void actionPerformed(ActionEvent e) {
-		    	ChangePage.changeToCompetitionPage();
-		    }
+		cp.add(new CButton(CButton.MainFrame, new AbstractAction("比賽模式") {
+			public void actionPerformed(ActionEvent e) {
+				ChangePage.changeToCompetitionPage();
+			}
 		}));
-		cp.add(new CButton(CButton.MainFrame,new AbstractAction("準備中") {
-		    public void actionPerformed(ActionEvent e) {
-		    	
-		    }
+		cp.add(new CButton(CButton.MainFrame, new AbstractAction("準備中") {
+			public void actionPerformed(ActionEvent e) {
+
+			}
 		}));
-		cp.add(new CButton(CButton.MainFrame,new AbstractAction("離開遊戲") {
-		    public void actionPerformed(ActionEvent e) {
-		    	System.exit(0);
-		    }
+		cp.add(new CButton(CButton.MainFrame, new AbstractAction("離開遊戲") {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
 		}));
-				
+
 		/* Add Button's Panel to layeredPane(1) */
 		layeredPane.add(cp, new Integer(1));
 	}
-	
-}
 
+}

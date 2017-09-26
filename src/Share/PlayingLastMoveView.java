@@ -8,18 +8,18 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-import ChessGame.PlayerInfo;
+import ChessGame.Player;
 import NormalPattern.PlayingPlayerView;
 import ObserverData.MoveRecordData;
 
 public class PlayingLastMoveView implements Observer{
 	
 	private JPanel panel ;
-	private PlayerInfo playerInfo;
+	private Player playerInfo;
 	
 	private JLabel lastMoveLabel;
 	
-	public PlayingLastMoveView(JPanel panel, PlayerInfo playerInfo){
+	public PlayingLastMoveView(JPanel panel, Player playerInfo){
 		this.panel = panel;
 		this.playerInfo = playerInfo ;
 		this.iniView();

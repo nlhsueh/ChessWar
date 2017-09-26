@@ -4,7 +4,7 @@ import javax.swing.JPanel;
 
 import ChessGame.ChessSide;
 import ChessGame.GameModel;
-import ChessGame.PlayerInfo;
+import ChessGame.Player;
 import NormalPattern.NormalGameSetting;
 
 public abstract class AbstractPlayingPlayerView extends JPanel{
@@ -20,7 +20,7 @@ public abstract class AbstractPlayingPlayerView extends JPanel{
 	static public int fontSizeTitle = 18 ;
 	static public int fontSizeContext = 16 ;
 	
-	protected PlayerInfo playerInfo = new PlayerInfo();
+	protected Player playerInfo = new Player();
 	protected PlayingTimeoutView playerTimeoutView ;
 	protected PlayingLastMoveView playerLastMoveView ;
 	protected InterfacePlayeringPlayerInfoView playerInfoView;
