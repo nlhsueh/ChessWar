@@ -1,4 +1,4 @@
-package CompetitionPattern;
+package CompetitionMode;
 
 public class PlayGameThread extends Thread{
 	

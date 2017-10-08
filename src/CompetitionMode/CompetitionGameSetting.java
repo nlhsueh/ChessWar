@@ -1,4 +1,4 @@
-package CompetitionPattern;
+package CompetitionMode;
 
 public class CompetitionGameSetting {
 

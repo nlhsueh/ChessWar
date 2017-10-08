@@ -5,7 +5,7 @@ import java.awt.Font;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
 
-import CompetitionPattern.GameInfo;
+import CompetitionMode.GameInfo;
 
 @SuppressWarnings("serial")
 public class CButton extends JButton{

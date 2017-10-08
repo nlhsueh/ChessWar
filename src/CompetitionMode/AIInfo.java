@@ -1,7 +1,7 @@
 /*
  * 包含開發競爭模式時所有相關的類別設計
  */
-package CompetitionPattern;
+package CompetitionMode;
 
 import AI.AbstractPlayer;
 import ViewComponent.CButton;

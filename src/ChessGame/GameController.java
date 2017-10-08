@@ -428,7 +428,7 @@ public class GameController extends Observable implements MouseMotionListener, M
 				}
 				
 				/* 若該座標在棋盤內，且符合該棋子移動規則 */
-				if ((p != null) && chessRule.isCouldMove(c, p)) {
+				if ((p != null) && chessRule.canMove(c, p)) {
 					
 //					選擇棋子、移動資訊
 //					System.out.println("hasChess: " + hasChess(p));

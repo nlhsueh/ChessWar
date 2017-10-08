@@ -1,6 +1,6 @@
 package ObserverData;
 
-import CompetitionPattern.GameInfo;
+import CompetitionMode.GameInfo;
 import Save.RecordGame;
 
 public class GameOverData {

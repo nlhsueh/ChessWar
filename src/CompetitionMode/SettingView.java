@@ -1,4 +1,4 @@
-package CompetitionPattern;
+package CompetitionMode;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

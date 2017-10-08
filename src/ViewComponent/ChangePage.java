@@ -39,7 +39,7 @@ public class ChangePage {
 	}
 	
 	public static void changeToCompetitionPage(){
-		framePanel.add(new CompetitionPattern.SettingView(), "CompetitionSetting");
+		framePanel.add(new CompetitionMode.SettingView(), "CompetitionSetting");
 		cardLayout.show(framePanel, "CompetitionSetting");
 	}
 	

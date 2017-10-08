@@ -1,4 +1,4 @@
-package CompetitionPattern;
+package CompetitionMode;
 
 import java.awt.Point;
 import java.lang.reflect.Constructor;

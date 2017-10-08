@@ -669,7 +669,7 @@ public class GameModel extends Observable implements Observer{
 			/* 如果選擇棋子的顏色為當前玩家 && 遊戲未結束 && 不是暫停狀態 && 遊戲已經開始 */
 			if (c.getChessSide() == this.getTurn() && !this.isGameOver() && !this.pauseStatus) {
 				/* 若該座標在棋盤內，且符合該棋子移動規則 */
-				if ((p != null) && this.chessRule.isCouldMove(c, p)) {
+				if ((p != null) && this.chessRule.canMove(c, p)) {
 					
 					/* 合法移動，移除上一手移動軌跡 */
 					this.removePreviousMoveBorder();

@@ -86,7 +86,7 @@ public class ChessRule {
 	 * @param p Point
 	 * @return boolean
 	 */
-	public boolean isCouldMove(Chess c, Point p) {
+	public boolean canMove(Chess c, Point p) {
 
 		if (c.getChessLoc().equals(p))
 			return false;
