@@ -10,10 +10,10 @@ import javax.swing.JPanel;
 import ChessGame.ChessBoard;
 import ChessGame.ChessSide;
 import ChessGame.GameModel;
-import DevelopPattern.DevelopGameSetting;
-import NormalPattern.NormalGameSetting;
+import DevelopMode.DevelopGameSetting;
 import FrameView.MainFrame;
 import ObserverData.GameOverData;
+import PlayMode.NormalGameSetting;
 import Save.RecordGame;
 
 /**
@@ -34,9 +34,9 @@ public class PlayingModel implements Serializable,Observer{
 		this.gameSetting = gameSetting ;
 		
 		if(gameSetting instanceof NormalGameSetting){
-			this.playingView = new NormalPattern.PlayingView(this, framePanel);
+			this.playingView = new PlayMode.PlayingView(this, framePanel);
 		}else if(gameSetting instanceof DevelopGameSetting){
-			this.playingView = new DevelopPattern.PlayingView(this, framePanel);
+			this.playingView = new DevelopMode.PlayingView(this, framePanel);
 		}
 		
 		/* 遊戲參數初始化配置 */

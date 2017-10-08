@@ -16,11 +16,11 @@ import ChessGame.ChessBoard;
 import ChessGame.ChessMap;
 import ChessGame.ChessSide;
 import FrameView.MainFrame;
-import NormalPattern.NormalGameSetting;
 import ObserverData.ChangeTurnData;
 import ObserverData.GameOverData;
 import ObserverData.MyMove;
 import ObserverData.OpponentMove;
+import PlayMode.NormalGameSetting;
 import Save.RecordGame;
 
 public class GameModel extends Observable implements Observer{

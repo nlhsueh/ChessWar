@@ -9,8 +9,8 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import ChessGame.Player;
-import NormalPattern.PlayingPlayerView;
 import ObserverData.MoveRecordData;
+import PlayMode.PlayingPlayerView;
 
 public class PlayingLastMoveView implements Observer{
 	

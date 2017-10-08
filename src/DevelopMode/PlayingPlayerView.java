@@ -1,4 +1,4 @@
-package NormalPattern;
+package DevelopMode;
 
 import ChessGame.ChessSide;
 import Share.AbstractPlayingPlayerView;
@@ -7,9 +7,9 @@ import Share.PlayingLastMoveView;
 import Share.PlayingTimeoutView;
 
 public class PlayingPlayerView extends AbstractPlayingPlayerView{
-	
-	private static final long serialVersionUID = 1L;
 
+	private static final long serialVersionUID = 1L;
+	
 	public PlayingPlayerView(GameSetting gameSetting, int player){
 		
 		this.gameSetting = gameSetting;
@@ -21,20 +21,16 @@ public class PlayingPlayerView extends AbstractPlayingPlayerView{
 			this.setLocation(10, 10);
 			this.playerInfo.setPlayerColor(ChessSide.RED);
 			this.playerInfo.setColorWord("紅子");
-			this.playerInfo.setColorChess(PlayingPlayerView.colorRed);;
-			this.playerInfo.setPlayerNickname(this.gameSetting.nickname1);
+			this.playerInfo.setColorChess(PlayingPlayerView.colorRed);
 			this.playerInfo.setPlayerType(this.gameSetting.player1); 
-			this.playerInfo.setExternalName(this.gameSetting.externalAIName1);
 			
 			this.playerInfoView = new PlayingPlayerInfoView(this, this.playerInfo);
 		}else if(player == 2){
 			this.setLocation(747, 10);
 			this.playerInfo.setPlayerColor(ChessSide.BLACK);
 			this.playerInfo.setColorWord("黑子");
-			this.playerInfo.setColorChess(PlayingPlayerView.colorBlack);;
-			this.playerInfo.setPlayerNickname(this.gameSetting.nickname2);
+			this.playerInfo.setColorChess(PlayingPlayerView.colorBlack);
 			this.playerInfo.setPlayerType(this.gameSetting.player2); 
-			this.playerInfo.setExternalName(this.gameSetting.externalAIName2); 
 			
 			this.playerInfoView = new PlayingPlayerInfoView(this, this.playerInfo);
 		}
@@ -43,5 +39,5 @@ public class PlayingPlayerView extends AbstractPlayingPlayerView{
 		// 初始化最後一手Panel
 		this.playerLastMoveView = new PlayingLastMoveView(this, this.playerInfo) ;
 	}
-
+	
 }

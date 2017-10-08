@@ -1,4 +1,4 @@
-package DevelopPattern;
+package DevelopMode;
 
 import java.awt.Color;
 import java.awt.Font;

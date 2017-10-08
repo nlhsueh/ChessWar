@@ -18,14 +18,14 @@ import javax.swing.border.LineBorder;
 import AI.AbstractPlayer;
 import AI.BuildInAI;
 import AI.CommunicateObserver;
-import DevelopPattern.DevelopGameSetting;
+import DevelopMode.DevelopGameSetting;
 import FrameView.MainFrame;
-import NormalPattern.NormalGameSetting;
 import ObserverData.ChangeTurnData;
 import ObserverData.MyMove;
 import ObserverData.GameOverData;
 import ObserverData.LeaveGameData;
 import ObserverData.OpponentMove;
+import PlayMode.NormalGameSetting;
 import Save.RecordGame;
 import Share.GameSetting;
 

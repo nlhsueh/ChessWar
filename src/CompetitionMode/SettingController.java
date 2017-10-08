@@ -24,7 +24,7 @@ import AI.AbstractPlayer;
 import ChessGame.Chess;
 import ChessGame.ChessSide;
 import FrameView.MainFrame;
-import NormalPattern.NormalGameSetting;
+import PlayMode.NormalGameSetting;
 import ViewComponent.CButton;
 import ViewComponent.CLabel;
 import ViewComponent.ChangePage;

@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import ChessGame.ChessSide;
 import ChessGame.GameModel;
 import ChessGame.Player;
-import NormalPattern.NormalGameSetting;
+import PlayMode.NormalGameSetting;
 
 public abstract class AbstractPlayingPlayerView extends JPanel{
 	

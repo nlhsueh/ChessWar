@@ -7,8 +7,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-import DevelopPattern.DevelopGameSetting;
-import NormalPattern.NormalGameSetting;
+import DevelopMode.DevelopGameSetting;
+import PlayMode.NormalGameSetting;
 import Share.AbstractPlayingPlayerView;
 import Share.GameSetting;
 

@@ -1,4 +1,4 @@
-package NormalPattern;
+package PlayMode;
 
 import java.awt.Component;
 

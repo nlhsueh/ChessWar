@@ -17,9 +17,9 @@ import ChessGame.Chess;
 import ChessGame.ChessBoard;
 import ChessGame.ChessMap;
 import FrameView.MainFrame;
-import NormalPattern.PlayingPlayerView;
 import ObserverData.MoveRecordData;
 import ObserverData.MyMove;
+import PlayMode.PlayingPlayerView;
 import Save.RecordGame;
 
 // 顯示每一首移動、顯示第幾手、顯示黑棋紅棋是誰

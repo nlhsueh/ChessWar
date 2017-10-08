@@ -6,8 +6,8 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import DevelopPattern.DevelopGameSetting;
-import NormalPattern.NormalGameSetting;
+import DevelopMode.DevelopGameSetting;
+import PlayMode.NormalGameSetting;
 import Share.ExternalAIData;
 import Share.GameSetting;
 

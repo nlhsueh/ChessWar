@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
-import NormalPattern.AddingAIView;
+import PlayMode.AddingAIView;
 import Save.SaveSetting;
 import Share.ExternalAIData;
 import Share.GameSetting;
@@ -59,8 +59,8 @@ public class MainFrame extends JFrame {
 		GameSetting developGameSetting = SaveSetting.loadDevelopGameSetting();
 		ExternalAIData externalAIData = SaveSetting.loadExternalAI();
 
-		MainFrame.framePanel.add(new NormalPattern.SettingView(playGameSetting, externalAIData), "PlaySetting");
-		MainFrame.framePanel.add(new DevelopPattern.SettingView(developGameSetting), "DevelopSetting");
+		MainFrame.framePanel.add(new PlayMode.SettingView(playGameSetting, externalAIData), "PlaySetting");
+		MainFrame.framePanel.add(new DevelopMode.SettingView(developGameSetting), "DevelopSetting");
 		MainFrame.framePanel.add(new AddingAIView(externalAIData), "LoadingAI");
 		new ChangePage(MainFrame.framePanel, this.cardLayout);
 	}

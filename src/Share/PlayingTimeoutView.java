@@ -14,10 +14,10 @@ import javax.swing.SwingConstants;
 
 import ChessGame.Player;
 import FrameView.MainFrame;
-import NormalPattern.PlayingPlayerView;
 import ObserverData.ChangeTurnData;
 import ObserverData.GameOverData;
 import ObserverData.LeaveGameData;
+import PlayMode.PlayingPlayerView;
 
 public class PlayingTimeoutView implements Observer{
 	

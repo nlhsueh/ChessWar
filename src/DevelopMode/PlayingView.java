@@ -1,7 +1,8 @@
-package NormalPattern;
+package DevelopMode;
 
 import java.awt.CardLayout;
 import java.awt.Font;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
@@ -12,11 +13,12 @@ import Share.PlayingModel;
 import ViewComponent.DrawBackground;
 
 public class PlayingView extends AbstractPlayingView{
-	
+
 	public PlayingView(PlayingModel model, JPanel framePanel){
 		this.model = model ;
 		this.framePanel = framePanel;
 		this.framePanel.add(this.layeredPane,"Play");
+		
 		this.controller = new PlayingController(model) ;
 		this.controller.setFramePanel(framePanel);
 		this.controller.setCardLayout((CardLayout) this.framePanel.getLayout());
@@ -38,7 +40,7 @@ public class PlayingView extends AbstractPlayingView{
 	protected void setTitle(){
 		JLabel title = new JLabel();
 		
-		title.setText("<html><font color='"+PlayingPlayerView.colorTitle+"'>"+"對弈模式"+"</font></html>");
+		title.setText("<html><font color='"+PlayingPlayerView.colorTitle+"'>"+"開發模式"+"</font></html>");
 		title.setHorizontalAlignment(SwingConstants.CENTER);
 		title.setFont(new Font("Microsoft JhenHei", Font.PLAIN, 40));
 		title.setSize(924,50);
