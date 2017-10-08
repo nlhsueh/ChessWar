@@ -119,5 +119,4 @@ public class MainFrame extends JFrame {
 		/* Add Button's Panel to layeredPane(1) */
 		layeredPane.add(cp, new Integer(1));
 	}
-
 }
